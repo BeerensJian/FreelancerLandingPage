@@ -1,0 +1,6 @@
+RewriteEngine On
+
+
+# RewriteCond %{REQUEST_FILENAME} !-f  | Rewrite unless its a file
+# RewriteCond %{REQUEST_FILENAME} !-d  | Rewrite unless its a directory
+RewriteRule ^(.*)$ index.php [L,QSA]
