@@ -1,6 +1,11 @@
 RewriteEngine On
 
+# Allow direct access to files and folders within 'public'
+RewriteCond %{REQUEST_URI} ^/public/.*$ [OR]
+RewriteCond %{REQUEST_URI} ^/public$
+RewriteRule ^ - [L]
 
-# RewriteCond %{REQUEST_FILENAME} !-f  | Rewrite unless its a file
-# RewriteCond %{REQUEST_FILENAME} !-d  | Rewrite unless its a directory
-RewriteRule ^(.*)$ index.php [L,QSA]
+# Redirect all other requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
