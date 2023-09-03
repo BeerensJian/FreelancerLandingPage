@@ -18,7 +18,7 @@ class Database
 
     public function query(string $sql, array $params = []): self
     {
-        $this->statement = $this->connection->prepare($sql, $params)->execute();
+        $this->statement = $this->connection->prepare($sql, $params);
         return $this;
     }
 

@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 require 'router.php';
 
 $config = require 'config.php';
-$router = new Router($config['database']);
+$router = new Router();
 require 'routes.php';
 
 $uri = $_SERVER['REQUEST_URI'];
