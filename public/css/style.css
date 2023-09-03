@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg {
+    height: 100vh;
+    background-image: url("../images/bgimage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card input {
+    display: block;
+    font-size: 16px;
+}
+
+.login-card button {
+    margin: auto;
+}
