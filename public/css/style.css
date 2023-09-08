@@ -40,6 +40,7 @@ nav {
     border: 1px solid rgba(105, 105, 105, 0.32);
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 nav ul {
     list-style: none;
