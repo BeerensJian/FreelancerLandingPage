@@ -73,20 +73,32 @@ require 'partials/head.php';
 </section>
 
 <section>
-    <form action="">
-        <label for="name">Voor & achternaam:</label>
-        <input type="text" id="name" name="name">
+    <div class="container">
+        <h2>Maak nu vrijblijvend een afspraak!</h2>
+        <form action="/" method="POST">
+            <div>
+                <label for="name">Voor & achternaam:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="gsm">Mobiel nr:</label>
+                <input type="text" id="gsm" name="gsm">
+            </div>
+            <div>
+                <label for="extrainfo">Vraag of extra informatie?</label>
+                <textarea name="extrainfo" id="extrainfo" cols="30" rows="10"></textarea>
+            </div>
+            <button class="button" type="submit"><span class="button-content">Verzenden</span></button>
+        </form>
+    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-
-        <label for="gsm">Mobiel nr:</label>
-        <input type="text" id="gsm" name="gsm">
-
-
-    </form>
 </section>
 
 <?php
 require 'partials/footer.php';
 ?>
+
