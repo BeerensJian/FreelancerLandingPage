@@ -6,7 +6,7 @@ require 'partials/head.php';
         <li id="title"><h1>Energie Constultant</h1></li>
         <li><a href="/">Home</a></li>
         <li><a href="/">Over Ons</a></li>
-        <li><a href="/">Afspraak Maken</a></li>
+        <li><a id="cta_nav" class="cta_button" href="#form_title">Afspraak Maken</a></li>
     </ul>
 </nav>
 
@@ -14,7 +14,8 @@ require 'partials/head.php';
     <div class="container header_content">
         <div class="header_text">
             <h1>Besparen op uw energiefactuur?</h1>
-            <p>Dat is onze expertise!</p>
+            <p>Dat is onze expertise</p>
+            <a class="cta_button" href="#form_title">Maak afspraak</a>
         </div>
         <img src="../public/images/headerimg.png" alt="">
     </div>
@@ -74,7 +75,7 @@ require 'partials/head.php';
 
 <section>
     <div class="container">
-        <h2>Maak nu vrijblijvend een afspraak!</h2>
+        <h2 id="form_title">Maak nu vrijblijvend een afspraak!</h2>
         <form action="/" method="POST">
             <div>
                 <label for="name">Voor & achternaam:</label>

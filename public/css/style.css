@@ -8,6 +8,15 @@
     color: #262626;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url("../images/scattered-forcefields.svg");
+    background-size: contain;
+}
+
 p {
     font-size: 14px;
 }
@@ -32,6 +41,23 @@ section h2 {
     font-size: 30px;
     text-align: center;
     padding: 40px 0;
+}
+
+.cta_button {
+    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #F09819  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.cta_button:hover {
+    background-position: right center;
+    color: #fff;
 }
 
 /* NAVBAR*/
@@ -61,6 +87,11 @@ nav ul li {
 nav ul li a {
     padding: 20px;
     text-decoration: none;
+}
+
+#cta_nav {
+    padding: 8px;
+    margin: 12px;
 }
 
 /* HEADER */
@@ -98,6 +129,13 @@ header {
     margin-top: 10px;
 }
 
+.header_text a {
+    width: 300px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 15px 45px;
+}
 
 /* ABOUT */
 
@@ -160,14 +198,19 @@ header {
     text-align: center;
 }
 
+.values_content {
+    background-color: white;
+}
+
 .values .values_content span {
     font-size: 20px;
 }
 
 .values .values_content p {
+    margin-top: 10px;
     margin-bottom: 40px;
     font-size: 18px;
-    color: gray;
+    color: rgb(128, 128, 128);
 }
 
 /* FORM */
@@ -212,6 +255,7 @@ input:focus, textarea:focus {
     border: none;
     width: 100%;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .button:hover::before {
