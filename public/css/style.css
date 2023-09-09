@@ -18,8 +18,8 @@ h1, h2, h3, h4 {
 
 .container {
     width: calc(100% - 600px);
-    min-width: 800px;
-    max-width: 1000px;
+    min-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -30,6 +30,8 @@ section {
 
 section h2 {
     font-size: 30px;
+    text-align: center;
+    padding: 40px 0;
 }
 
 /* NAVBAR*/
@@ -75,6 +77,12 @@ header {
     justify-content: space-between;
 }
 
+.header_content img {
+    width: 400px;
+    height: 400px;
+    align-self: center;
+}
+
 .header_text {
     display: flex;
     justify-content: center;
@@ -90,13 +98,9 @@ header {
     margin-top: 10px;
 }
 
+
 /* ABOUT */
 
-.about_me h2 {
-    color: #262626;
-    text-align: center;
-    padding: 20px 0;
-}
 .about_me_content {
     display: flex;
     margin: 60px;
@@ -109,3 +113,66 @@ header {
 .about_me_content img {
     clip-path: circle();
 }
+
+/* PROCEDURE */
+
+.how_it_works {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.how_it_works h2 {
+    padding-bottom: 40px;
+}
+
+.how_it_works .step {
+    display: flex;
+    flex-direction: column;
+    width: 233px;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.5s;
+}
+
+.how_it_works .step:hover {
+    -webkit-box-shadow: 0 9px 18px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 9px 18px -6px rgba(0,0,0,0.75);
+    box-shadow: 0 9px 18px -6px rgba(0,0,0,0.75);
+}
+
+.how_it_works .step h3 {
+    padding: 25px 0
+}
+
+.how_it_works .step img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 36px;
+}
+
+/* VALUES */
+
+.values {
+    text-align: center;
+}
+
+.values .values_content span {
+    font-size: 20px;
+}
+
+.values .values_content p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: gray;
+}
+
+
+
+
+
+
+
