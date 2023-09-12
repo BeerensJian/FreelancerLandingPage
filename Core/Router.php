@@ -1,5 +1,10 @@
 <?php
 
+namespace Core;
+
+
+use mysql_xdevapi\Exception;
+
 class Router
 {
     private array $routes;
@@ -46,5 +51,7 @@ class Router
                 return $route['controller'];
             }
         }
+
+        throw new Exception('Route not found');
     }
 }
