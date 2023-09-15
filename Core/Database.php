@@ -11,9 +11,10 @@ class Database
 
     public function __construct(array $config, string $user = "root", string $pass = "root")
     {
-        extract($config);
+        $dsn_string = "mysql:" . http_build_query($config, "", ";");
+
         $this->connection = new PDO(
-            "mysql:host=$host;port=$port;dbname=$dbname;charset=$charset",
+            $dsn_string,
             $user,
             $pass,
             [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
@@ -22,7 +23,8 @@ class Database
 
     public function query(string $sql, array $params = []): self
     {
-        $this->statement = $this->connection->prepare($sql, $params);
+        $this->statement = $this->connection->prepare($sql);
+        $this->statement->execute($params);
         return $this;
     }
 

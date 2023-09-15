@@ -5,7 +5,8 @@ require 'partials/head.php';
     <ul class="container">
         <li id="title"><h1>Energie Constultant</h1></li>
         <li><a href="/">Home</a></li>
-        <li><a href="/">Over Ons</a></li>
+        <li><a href="/">Over Mij</a></li>
+        <li><a href="/">Verloop</a></li>
         <li><a id="cta_nav" class="cta_button" href="#form_title">Afspraak Maken</a></li>
     </ul>
 </nav>
@@ -86,8 +87,8 @@ require 'partials/head.php';
                 <input type="email" id="email" name="email">
             </div>
             <div>
-                <label for="gsm">Mobiel nr:</label>
-                <input type="text" id="gsm" name="gsm">
+                <label for="mobile">Mobiel nr:</label>
+                <input type="text" id="mobile" name="mobile">
             </div>
             <div>
                 <label for="extrainfo">Vraag of extra informatie?</label>
