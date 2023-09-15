@@ -2,23 +2,30 @@
 
 .bg {
     height: 100vh;
-    background-image: url("../images/bgimage.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .login-card {
+    width: 400px;
     display: flex;
     flex-direction: column;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    border:1px solid #cccccc ;
+    text-align: center;
+    padding: 10px;
 }
 
 .login-card input {
     display: block;
     font-size: 16px;
+}
+
+.login-card label {
+    display: block;
 }
 
 .login-card button {

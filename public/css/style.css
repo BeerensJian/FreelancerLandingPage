@@ -206,21 +206,6 @@ form label {
     margin: 10px 0 5px;
 }
 
-input, textarea {
-    display: block;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #828282;
-    outline: none;
-    width: 100%;
-}
-
-input:focus, textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
 
 .button {
     position: relative;
