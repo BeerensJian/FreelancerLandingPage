@@ -6,6 +6,7 @@ $config = require 'config.php';
 $db = new Database($config['database']);
 
 // TODO: validation
+// TODO: mail form to email
 
 $db->query("INSERT INTO userdata (name, email, mobile, extra_info) VALUES (?, ?, ?, ?);", [
     $_POST['name'],
