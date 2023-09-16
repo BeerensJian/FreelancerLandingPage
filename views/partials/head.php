@@ -1,3 +1,9 @@
+<?php
+/**
+  * @var string $path_to_css
+  */
+?>
+
 <!doctype html>
 <html lang="en">
 <head>

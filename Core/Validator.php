@@ -4,9 +4,9 @@ namespace Core;
 
 class Validator
 {
-    protected array $errors;
+    protected array $errors = [];
 
-    public function string(string $value, string $field, int $min = 1, float $max = INF ) {
+    public function string(string $value, string $field, int $min = 1, float $max = INF ): void {
         if (strlen($value) < $min) {
             $this->errors[] = "$field needs to be longer than $min character(s)";
         } else if (strlen($value) > $max) {
@@ -14,11 +14,15 @@ class Validator
         }
     }
 
-    public function email(string $email, string $field) {
+    public function email(string $email): void {
         $result = filter_var($email, FILTER_VALIDATE_EMAIL);
         if (!$result) {
             $this->errors[] = "'$email' is not a valid email adress";
         }
     }
 
+    public function errors(): array
+    {
+        return $this->errors;
+    }
 }
