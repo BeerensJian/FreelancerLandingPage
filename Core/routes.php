@@ -3,5 +3,7 @@
 $router->get('/', 'controllers/index.php');
 $router->post('/', 'controllers/store.php'); // form submit
 
-$router->get('/adminlogin', 'controllers/admin/login.php');
-$router->post('/adminlogin', 'controllers/admin/session.php');
+$router->get('/admin/login', 'controllers/admin/login.php');
+$router->post('/admin/login', 'controllers/admin/session.php');
+
+$router->get('/admin/dashboard', 'controllers/admin/dashboard.php');

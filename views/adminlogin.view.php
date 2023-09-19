@@ -2,9 +2,6 @@
 /**
  * @var array $errors
  */
-?>
-
-<?php
 require 'views/partials/head.php';
 ?>
     <div class="bg">
