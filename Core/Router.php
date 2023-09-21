@@ -3,7 +3,13 @@
 namespace Core;
 
 
-use mysql_xdevapi\Exception;
+use Exception;
+
+enum AuthorizationRoles: string
+{
+    case ADMIN = "admin";
+    case USER = "user";
+}
 
 class Router
 {
@@ -14,38 +20,48 @@ class Router
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
-            'method' => strtoupper($method)
+            'method' => strtoupper($method),
+            'middleware' => []
         ];
+        return $this;
     }
 
-    public function get(string $uri, string $controller)
+    public function get(string $uri, string $controller) : self
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
     }
 
-    public function post(string $uri, string $controller)
+    public function post(string $uri, string $controller): self
     {
-        $this->add($uri, $controller, 'POST');
+        return $this->add($uri, $controller, 'POST');
     }
 
-    public function delete(string $uri, string $controller)
+    public function delete(string $uri, string $controller): self
     {
-        $this->add($uri, $controller, 'DELETE');
+        return $this->add($uri, $controller, 'DELETE');
     }
 
-    public function patch(string $uri, string $controller)
+    public function patch(string $uri, string $controller): self
     {
-        $this->add($uri, $controller, 'PATCH');
+        return $this->add($uri, $controller, 'PATCH');
     }
 
-    public function put(string $uri, string $controller)
+    public function put(string $uri, string $controller): self
     {
-        $this->add($uri, $controller, 'PUT');
+        return $this->add($uri, $controller, 'PUT');
     }
+
+    public function only(AuthorizationRoles $role): self {
+        $this->routes[count($this->routes) - 1]["middleware"]["authorization"] = $role->value;
+        return $this;
+    }
+
+
 
     // route to controller
     public function route(string $uri, string $method)
     {
+        // todo implement check for middleware
         foreach ($this->routes as $route) {
             if ($route['uri'] == $uri && $route['method'] == strtoupper($method)) {
                 return $route['controller'];
