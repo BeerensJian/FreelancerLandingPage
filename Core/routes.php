@@ -1,6 +1,6 @@
 <?php
 
-use Core\AuthorizationRoles;
+use Core\Middleware\AuthorizationRoles;
 
 $router->get('/', 'controllers/index.php');
 $router->post('/', 'controllers/store.php'); // form submit

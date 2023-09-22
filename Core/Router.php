@@ -3,13 +3,10 @@
 namespace Core;
 
 
+use Core\Middleware\AuthorizationRoles;
+use Core\Middleware\Authorize;
 use Exception;
-
-enum AuthorizationRoles: string
-{
-    case ADMIN = "admin";
-    case USER = "user";
-}
+use Core\Middleware\MiddlewareHandler;
 
 class Router
 {
@@ -52,7 +49,7 @@ class Router
     }
 
     public function only(AuthorizationRoles $role): self {
-        $this->routes[count($this->routes) - 1]["middleware"]["authorization"] = $role->value;
+        $this->routes[count($this->routes) - 1]["middleware"][] = Authorize::allow($role);
         return $this;
     }
 
@@ -64,6 +61,9 @@ class Router
         // todo implement check for middleware
         foreach ($this->routes as $route) {
             if ($route['uri'] == $uri && $route['method'] == strtoupper($method)) {
+                // check the middleware
+                // if the authenication key = admin,
+                (new MiddlewareHandler())->resolve($route["middleware"]);
                 return $route['controller'];
             }
         }
