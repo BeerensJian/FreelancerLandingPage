@@ -1,14 +1,15 @@
 @import "default.css";
 
-.col-sm-3, .col-sm-9 {
+.col-sm-2, .col-sm-10 {
     border: 1px solid red;
 }
 
+
 @media (max-width: 575.98px) {
-    .col-sm-9 {
+    .col-sm-10 {
         height: 75%;
     }
-    .col-sm-3 {
+    .col-sm-2 {
         height: 25%;
     }
 }

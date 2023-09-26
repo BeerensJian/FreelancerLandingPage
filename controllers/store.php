@@ -30,4 +30,4 @@ $db->query("INSERT INTO userdata (name, email, mobile, extra_info) VALUES (?, ?,
     $_POST['extrainfo']
 ]);
 
-dd('form submitted');
+redirect("/");
