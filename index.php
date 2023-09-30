@@ -15,7 +15,7 @@ spl_autoload_register(function ($class) {
     require  $class . '.php';
 });
 
-$config = require 'config.php';
+require 'bootstrap.php'; // create a container containing instances, easy to get instances quickly
 $router = new Router();
 require 'Core/routes.php';;
 
