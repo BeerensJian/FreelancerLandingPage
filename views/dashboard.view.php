@@ -22,8 +22,8 @@ require 'views/partials/head.php';
                 </li>
             </ul>
         </div>
-        <div class="col-sm-10 p-3">
-            <h3 class="py-3">Statistieken Indieningen</h3>
+        <div class="col-sm-10 p-5">
+            <h2 class="py-3">Statistieken Indieningen</h2>
             <div class="row row-cols-3">
                 <div class="col test">
                     <div class="card">
@@ -66,15 +66,43 @@ require 'views/partials/head.php';
                 </div>
             </div>
 
-            <div class="accordeon" id="user-list-accordeon">
-                <div class="accordeon-item">
-                    <h3 class="accordeon-header">
-                        <button class="accordeon-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Kate Scarlett
+            <div class="accordion" id="accordion">
+
+                <h2 class="my-5">Laatste Indieningen</h2>
+                <?php foreach ($userSubmits as $user): ?>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="heading<?=$user['id']?>">
+                        <button class="accordion-button collapsed  <?= $user['completed'] ? "bg-success-subtle" : ""?>" style=";" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $user['id'] ?>" aria-expanded="false" aria-controls="collapse<?= $user['id'] ?>">
+                            <?= $user['name'] ?>
                         </button>
-                        finish this
                     </h3>
+                    <div id="collapse<?= $user['id'] ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= $user['id']?>" data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            <div>
+                                <div class="py-2">
+                                    <span class="fw-bold">Email:</span>
+                                    <span><?= $user['email'] ?></span>
+                                </div>
+                                <div class="py-2">
+                                    <span class="fw-bold">Mobiel Nr:</span>
+                                    <span ><?= $user['mobile'] ?></span>
+                                </div>
+                                <div class="py-2">
+                                    <p class="fw-bold mb-1">Extra Informatie:</p>
+                                    <p><?= $user['extrainfo'] ?></p>
+                                </div>
+                                <form action="" method="POST" class="d-flex justify-content-end">
+                                    <input type="text" hidden name="id" value="<?= $user['id'] ?>">
+                                    <button class="btn btn-primary">Gecontacteerd</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <?php endforeach; ?>
+
             </div>
     </div>
 </div>

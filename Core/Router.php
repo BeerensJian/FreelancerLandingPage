@@ -61,8 +61,6 @@ class Router
         // todo implement check for middleware
         foreach ($this->routes as $route) {
             if ($route['uri'] == $uri && $route['method'] == strtoupper($method)) {
-                // check the middleware
-                // if the authenication key = admin,
                 (new MiddlewareHandler())->resolve($route["middleware"]);
                 return $route['controller'];
             }

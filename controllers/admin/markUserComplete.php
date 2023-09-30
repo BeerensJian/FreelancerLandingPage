@@ -1,0 +1,6 @@
+<?php
+
+
+
+
+redirect('/admin/dashboard');

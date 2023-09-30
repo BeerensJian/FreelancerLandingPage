@@ -23,7 +23,7 @@ if (!empty($validator->errors())){
 // TODO: mail form to email
 // TODO: handle errors in view
 // TODO: refractor error handling so its easier to seperate errors per field / look cleaner
-$db->query("INSERT INTO userdata (name, email, mobile, extra_info) VALUES (?, ?, ?, ?);", [
+$db->query("INSERT INTO userdata (name, email, mobile, extrainfo) VALUES (?, ?, ?, ?);", [
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],

@@ -17,7 +17,7 @@ class Validator
     public function email(string $email): void {
         $result = filter_var($email, FILTER_VALIDATE_EMAIL);
         if (!$result) {
-            $this->errors[] = "'$email' is not a valid email adress";
+            $this->errors[] = "'$email' is not a valid email address";
         }
     }
 
