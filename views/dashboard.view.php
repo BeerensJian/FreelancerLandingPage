@@ -94,7 +94,7 @@ require 'views/partials/head.php';
                                 </div>
                                 <form action="" method="POST" class="d-flex justify-content-end">
                                     <input type="text" hidden name="id" value="<?= $user['id'] ?>">
-                                    <button class="btn btn-primary">Gecontacteerd</button>
+                                    <button class="btn btn-<?= !$user['completed'] ? "primary" : "danger" ?>"><?= !$user['completed'] ? "Gecontacteerd" : "Ongedaan maken" ?></button>
                                 </form>
                             </div>
                         </div>
