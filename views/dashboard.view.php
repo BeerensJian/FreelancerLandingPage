@@ -32,7 +32,7 @@ require 'views/partials/head.php';
                                 Vandaag
                             </h5>
                             <div class="card-text">
-                                Inzendingen: 10
+                                Inzendingen: <?= $day ?>
                             </div>
                         </div>
 
@@ -42,10 +42,10 @@ require 'views/partials/head.php';
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Deze maand
+                                Week
                             </h5>
                             <div class="card-text">
-                                Inzendingen: 10
+                                Inzendingen: <?= $week ?>
                             </div>
                         </div>
 
@@ -55,10 +55,10 @@ require 'views/partials/head.php';
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Totaal
+                                Maand
                             </h5>
                             <div class="card-text">
-                                Inzendingen: 10
+                                Inzendingen: <?= $month ?>
                             </div>
                         </div>
 
