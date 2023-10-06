@@ -19,3 +19,19 @@ function abort($code = 404) : void
     require "views/$code.php";
     exit();
 }
+
+function previousPage(int $pageNumber) : int
+{
+    $previousPage = $pageNumber - 1;
+    if ($previousPage < 1) $previousPage = 1;
+
+    return $previousPage;
+}
+
+function nextPage(int $pageNumber, int $max) : int
+{
+    $nextPage = $pageNumber + 1;
+    if ($nextPage > $max) $nextPage = $max;
+
+    return $nextPage;
+}

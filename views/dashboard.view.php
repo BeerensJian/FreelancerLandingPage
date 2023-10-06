@@ -1,8 +1,12 @@
 <?php
+/**
+ * @var int $day
+ * @var int $week
+ * @var int $month
+ * @var array $userSubmits
+ */
+
 require 'views/partials/head.php';
-// Todo: display stats in the home page of the dashboard (forms submits, day, week, month, record visitors?)
-// another page for blogposts maybe?
-// allow users to submit reviews and make a page where the admin can choose which reviews to show or hide certain reviews?
 ?>
 <div class="container-fluid vh-100">
     <div class="row h-100">
@@ -92,7 +96,7 @@ require 'views/partials/head.php';
                                     <p class="fw-bold mb-1">Extra Informatie:</p>
                                     <p><?= $user['extrainfo'] ?></p>
                                 </div>
-                                <form action="" method="POST" class="d-flex justify-content-end">
+                                <form action="/admin/dashboard" method="POST" class="d-flex justify-content-end">
                                     <input type="text" hidden name="id" value="<?= $user['id'] ?>">
                                     <button class="btn btn-<?= !$user['completed'] ? "primary" : "danger" ?>"><?= !$user['completed'] ? "Gecontacteerd" : "Ongedaan maken" ?></button>
                                 </form>
@@ -100,8 +104,12 @@ require 'views/partials/head.php';
                         </div>
                     </div>
                 </div>
-
                 <?php endforeach; ?>
+
+                <?php
+                // pagination component
+                require "views/components/pagination.php"
+                ?>
 
             </div>
     </div>
