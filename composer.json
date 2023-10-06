@@ -1,0 +1,15 @@
+{
+    "name": "jian/freelancer-landing-page",
+    "authors": [
+        {
+            "name": "Jian Beerens",
+            "email": "beerensjian@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\" : "Core/"
+        }
+    }
+}
