@@ -19,7 +19,7 @@ require 'bootstrap.php'; // create a container containing instances, easy to get
 $router = new Router();
 require 'Core/routes.php';;
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = explode("?", $_SERVER['REQUEST_URI'])[0];
 $method = $_SERVER['REQUEST_METHOD'];
 require $router->route($uri, $method);
 
