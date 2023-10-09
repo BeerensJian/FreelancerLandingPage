@@ -1,6 +1,5 @@
 <?php
 
-
 use Core\App;
 
 $path_to_css = "../../public/css/dashboard.css";

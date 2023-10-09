@@ -54,7 +54,6 @@ class Router
     }
 
 
-
     // route to controller
     public function route(string $uri, string $method)
     {
