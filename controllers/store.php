@@ -2,6 +2,7 @@
 
 use Core\App;
 use Core\Database;
+use Core\SMTPMailer;
 use Core\Validator;
 use Core\Session;
 
@@ -30,7 +31,8 @@ $db->query("INSERT INTO userdata (name, email, mobile, extrainfo) VALUES (?, ?, 
     $_POST['extrainfo']
 ]);
 
-$mailer = new \Core\SMTPMailer($_ENV['SMTP_LOGIN']);
+/** @var SMTPMailer $mailer */
+$mailer = App::resolve("SMTPMailer");
 if ($mailer->sendUserInfo($_POST, "soundcloudhits@gmail.com")){
     Session::flash("message", "Bedankt voor het vertrouwen, ik neem zo snel mogelijk contact met je op voor jou situatie verder te bespreken.");
 } else {
