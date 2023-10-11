@@ -1,19 +1,6 @@
 @import "default.css";
-
-.col-sm-2, .col-sm-10 {
-    border: 1px solid red;
-}
+@import "bootstrap.min.css";
 
 .bg-lightgreen {
     background-color: rgba(var(--bs-primary-rgb), 0.5) !important;
-}
-
-
-@media (max-width: 575.98px) {
-    .col-sm-10 {
-        height: 75%;
-    }
-    .col-sm-2 {
-        height: 25%;
-    }
 }

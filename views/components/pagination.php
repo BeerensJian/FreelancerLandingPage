@@ -5,7 +5,7 @@
  */
 ?>
 
-<nav aria-label="Page navigation">
+<nav class="mt-3" aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         <li class="page-item"><a class="page-link" href="/admin/dashboard?page=<?= previousPage($page)?>">Previous</a></li>
         <?php
